@@ -1,0 +1,1992 @@
+# TMDB API
+
+###
+# group: 3 / search
+# @name Movie
+# Search for movies by their original, translated and alternative titles.
+GET {{baseUrl}}/3/search/movie?
+    query=<string>&
+    include_adult=false&
+    language=en-US&
+    primary_release_year=<string>&
+    page=1&
+    region=<string>&
+    year=<string>
+Authorization: {{apiKey}}
+Accept: application/json
+
+<> ./200.200.json
+// {{baseUrl}}/3/search/movie?query=<string>&include_adult=false&language=en-US&primary_release_year=<string>&page=1&region=<string>&year=<string>
+
+###
+# group: 3 / search
+# @name TV
+# Search for TV shows by their original, translated and also known as names.
+GET {{baseUrl}}/3/search/tv?
+    query=<string>&
+    first_air_date_year=<integer>&
+    include_adult=false&
+    language=en-US&
+    page=1&
+    year=<integer>
+Authorization: {{apiKey}}
+Accept: application/json
+
+<> ./200.200.json
+// {{baseUrl}}/3/search/tv?query=<string>&first_air_date_year=<integer>&include_adult=false&language=en-US&page=1&year=<integer>
+
+###
+# group: 3 / search
+# @name Multi
+# Use multi search when you want to search for movies, TV shows and people in a single request.
+GET {{baseUrl}}/3/search/multi?
+    query=<string>&
+    include_adult=false&
+    language=en-US&
+    page=1
+Authorization: {{apiKey}}
+Accept: application/json
+
+<> ./200.200.json
+// {{baseUrl}}/3/search/multi?query=<string>&include_adult=false&language=en-US&page=1
+
+###
+# group: 3 / search
+# @name Person
+# Search for people by their name and also known as names.
+GET {{baseUrl}}/3/search/person?
+    query=<string>&
+    include_adult=false&
+    language=en-US&
+    page=1
+Authorization: {{apiKey}}
+Accept: application/json
+
+<> ./200.200.json
+// {{baseUrl}}/3/search/person?query=<string>&include_adult=false&language=en-US&page=1
+
+###
+# group: 3 / search
+# @name Company
+# Search for companies by their original and alternative names.
+GET {{baseUrl}}/3/search/company?
+    query=<string>&
+    page=1
+Authorization: {{apiKey}}
+Accept: application/json
+
+<> ./200.200.json
+// {{baseUrl}}/3/search/company?query=<string>&page=1
+
+###
+# group: 3 / search
+# @name Collection
+# Search for collections by their original, translated and alternative names.
+GET {{baseUrl}}/3/search/collection?
+    query=<string>&
+    include_adult=false&
+    language=en-US&
+    page=1&
+    region=<string>
+Authorization: {{apiKey}}
+Accept: application/json
+
+<> ./200.200.json
+// {{baseUrl}}/3/search/collection?query=<string>&include_adult=false&language=en-US&page=1&region=<string>
+
+###
+# group: 3 / search
+# @name Keyword
+# Search for keywords by their name.
+GET {{baseUrl}}/3/search/keyword?
+    query=<string>&
+    page=1
+Authorization: {{apiKey}}
+Accept: application/json
+
+<> ./200.200.json
+// {{baseUrl}}/3/search/keyword?query=<string>&page=1
+
+###
+# group: 3 / discover
+# @name Movie
+# Find movies using over 30 filters and sort options.
+GET {{baseUrl}}/3/discover/movie?
+    certification=<string>&
+    certification.gte=<string>&
+    certification.lte=<string>&
+    certification_country=<string>&
+    include_adult=false&
+    include_video=false&
+    language=en-US&
+    page=1&
+    primary_release_year=<integer>&
+    primary_release_date.gte=<date>&
+    primary_release_date.lte=<date>&
+    region=<string>&
+    release_date.gte=<date>&
+    release_date.lte=<date>&
+    sort_by=popularity.desc&
+    vote_average.gte=<float>&
+    vote_average.lte=<float>&
+    vote_count.gte=<float>&
+    vote_count.lte=<float>&
+    watch_region=<string>&
+    with_cast=<string>&
+    with_companies=<string>&
+    with_crew=<string>&
+    with_genres=<string>&
+    with_keywords=<string>&
+    with_origin_country=<string>&
+    with_original_language=<string>&
+    with_people=<string>&
+    with_release_type=<integer>&
+    with_runtime.gte=<integer>&
+    with_runtime.lte=<integer>&
+    with_watch_monetization_types=<string>&
+    with_watch_providers=<string>&
+    without_companies=<string>&
+    without_genres=<string>&
+    without_keywords=<string>&
+    without_watch_providers=<string>&
+    year=<integer>
+Authorization: {{apiKey}}
+Accept: application/json
+
+<> ./200.200.json
+// {{baseUrl}}/3/discover/movie?certification=<string>&certification.gte=<string>&certification.lte=<string>&certification_country=<string>&include_adult=false&include_video=false&language=en-US&page=1&primary_release_year=<integer>&primary_release_date.gte=<date>&primary_release_date.lte=<date>&region=<string>&release_date.gte=<date>&release_date.lte=<date>&sort_by=popularity.desc&vote_average.gte=<float>&vote_average.lte=<float>&vote_count.gte=<float>&vote_count.lte=<float>&watch_region=<string>&with_cast=<string>&with_companies=<string>&with_crew=<string>&with_genres=<string>&with_keywords=<string>&with_origin_country=<string>&with_original_language=<string>&with_people=<string>&with_release_type=<integer>&with_runtime.gte=<integer>&with_runtime.lte=<integer>&with_watch_monetization_types=<string>&with_watch_providers=<string>&without_companies=<string>&without_genres=<string>&without_keywords=<string>&without_watch_providers=<string>&year=<integer>
+
+###
+# group: 3 / discover
+# @name TV
+# Find TV shows using over 30 filters and sort options.
+GET {{baseUrl}}/3/discover/tv?
+    air_date.gte=<date>&
+    air_date.lte=<date>&
+    first_air_date_year=<integer>&
+    first_air_date.gte=<date>&
+    first_air_date.lte=<date>&
+    include_adult=false&
+    include_null_first_air_dates=false&
+    language=en-US&
+    page=1&
+    screened_theatrically=<boolean>&
+    sort_by=popularity.desc&
+    timezone=<string>&
+    vote_average.gte=<float>&
+    vote_average.lte=<float>&
+    vote_count.gte=<float>&
+    vote_count.lte=<float>&
+    watch_region=<string>&
+    with_companies=<string>&
+    with_genres=<string>&
+    with_keywords=<string>&
+    with_networks=<integer>&
+    with_origin_country=<string>&
+    with_original_language=<string>&
+    with_runtime.gte=<integer>&
+    with_runtime.lte=<integer>&
+    with_status=<string>&
+    with_watch_monetization_types=<string>&
+    with_watch_providers=<string>&
+    without_companies=<string>&
+    without_genres=<string>&
+    without_keywords=<string>&
+    without_watch_providers=<string>&
+    with_type=<string>
+Authorization: {{apiKey}}
+Accept: application/json
+
+<> ./200.200.json
+// {{baseUrl}}/3/discover/tv?air_date.gte=<date>&air_date.lte=<date>&first_air_date_year=<integer>&first_air_date.gte=<date>&first_air_date.lte=<date>&include_adult=false&include_null_first_air_dates=false&language=en-US&page=1&screened_theatrically=<boolean>&sort_by=popularity.desc&timezone=<string>&vote_average.gte=<float>&vote_average.lte=<float>&vote_count.gte=<float>&vote_count.lte=<float>&watch_region=<string>&with_companies=<string>&with_genres=<string>&with_keywords=<string>&with_networks=<integer>&with_origin_country=<string>&with_original_language=<string>&with_runtime.gte=<integer>&with_runtime.lte=<integer>&with_status=<string>&with_watch_monetization_types=<string>&with_watch_providers=<string>&without_companies=<string>&without_genres=<string>&without_keywords=<string>&without_watch_providers=<string>&with_type=<string>
+
+###
+# group: 3 / movie / {movie_id} / rating
+# @name Add Rating
+# Rate a movie and save it to your rated list.
+POST {{baseUrl}}/3/movie/{{movie_id_1}}/rating?
+    guest_session_id=<string>&
+    session_id=<string>
+Authorization: {{apiKey}}
+Content-Type: application/json
+Accept: application/json
+
+{
+  "RAW_BODY": "<json>"
+}
+
+<> ./200.200.json
+// {{baseUrl}}/3/movie/:movie_id/rating?guest_session_id=<string>&session_id=<string>
+
+###
+# group: 3 / movie / {movie_id} / rating
+# @name Delete Rating
+# Delete a user rating.
+DELETE {{baseUrl}}/3/movie/{{movie_id_2}}/rating?
+    guest_session_id=<string>&
+    session_id=<string>
+Authorization: {{apiKey}}
+Accept: application/json
+
+<> ./200.200.json
+// {{baseUrl}}/3/movie/:movie_id/rating?guest_session_id=<string>&session_id=<string>
+
+###
+# group: 3 / movie / {movie_id}
+# @name Details
+# Get the top level details of a movie by ID.
+GET {{baseUrl}}/3/movie/{{movie_id_3}}?
+    append_to_response=<string>&
+    language=en-US
+Authorization: {{apiKey}}
+Accept: application/json
+
+<> ./200.200.json
+// {{baseUrl}}/3/movie/:movie_id?append_to_response=<string>&language=en-US
+
+###
+# group: 3 / movie / {movie_id}
+# @name Images
+# Get the images that belong to a movie.
+GET {{baseUrl}}/3/movie/{{movie_id_4}}/images?
+    include_image_language=<string>&
+    language=<string>
+Authorization: {{apiKey}}
+Accept: application/json
+
+<> ./200.200.json
+// {{baseUrl}}/3/movie/:movie_id/images?include_image_language=<string>&language=<string>
+
+###
+# group: 3 / movie / {movie_id}
+# @name Account States
+# Get the rating, watchlist and favourite status of an account.
+GET {{baseUrl}}/3/movie/{{movie_id_5}}/account_states?
+    session_id=<string>&
+    guest_session_id=<string>
+Authorization: {{apiKey}}
+Accept: application/json
+
+<> ./200.200.json
+// {{baseUrl}}/3/movie/:movie_id/account_states?session_id=<string>&guest_session_id=<string>
+
+###
+# group: 3 / movie / {movie_id}
+# @name Alternative Titles
+# Get the alternative titles for a movie.
+GET {{baseUrl}}/3/movie/{{movie_id_6}}/alternative_titles?
+    country=<string>
+Authorization: {{apiKey}}
+Accept: application/json
+
+<> ./200.200.json
+// {{baseUrl}}/3/movie/:movie_id/alternative_titles?country=<string>
+
+###
+# group: 3 / movie / {movie_id}
+# @name Changes
+# Get the recent changes for a movie.
+GET {{baseUrl}}/3/movie/{{movie_id_7}}/changes?
+    end_date=<date>&
+    page=1&
+    start_date=<date>
+Authorization: {{apiKey}}
+Accept: application/json
+
+<> ./200.200.json
+// {{baseUrl}}/3/movie/:movie_id/changes?end_date=<date>&page=1&start_date=<date>
+
+###
+# group: 3 / movie / {movie_id}
+# @name Credits
+GET {{baseUrl}}/3/movie/{{movie_id_8}}/credits?
+    language=en-US
+Authorization: {{apiKey}}
+Accept: application/json
+
+<> ./200.200.json
+// {{baseUrl}}/3/movie/:movie_id/credits?language=en-US
+
+###
+# group: 3 / movie / {movie_id}
+# @name External IDs
+GET {{baseUrl}}/3/movie/{{movie_id_9}}/external_ids
+Authorization: {{apiKey}}
+Accept: application/json
+
+<> ./200.200.json
+// {{baseUrl}}/3/movie/:movie_id/external_ids
+
+###
+# group: 3 / movie / {movie_id}
+# @name Keywords
+GET {{baseUrl}}/3/movie/{{movie_id_10}}/keywords
+Authorization: {{apiKey}}
+Accept: application/json
+
+<> ./200.200.json
+// {{baseUrl}}/3/movie/:movie_id/keywords
+
+###
+# group: 3 / movie / {movie_id}
+# @name Lists
+# Get the lists that a movie has been added to.
+GET {{baseUrl}}/3/movie/{{movie_id_11}}/lists?
+    language=en-US&
+    page=1
+Authorization: {{apiKey}}
+Accept: application/json
+
+<> ./200.200.json
+// {{baseUrl}}/3/movie/:movie_id/lists?language=en-US&page=1
+
+###
+# group: 3 / movie / {movie_id}
+# @name Recommendations
+GET {{baseUrl}}/3/movie/{{movie_id_12}}/recommendations?
+    language=en-US&
+    page=1
+Authorization: {{apiKey}}
+Accept: application/json
+
+<> ./200.200.json
+// {{baseUrl}}/3/movie/:movie_id/recommendations?language=en-US&page=1
+
+###
+# group: 3 / movie / {movie_id}
+# @name Release Dates
+# Get the release dates and certifications for a movie.
+GET {{baseUrl}}/3/movie/{{movie_id_13}}/release_dates
+Authorization: {{apiKey}}
+Accept: application/json
+
+<> ./200.200.json
+// {{baseUrl}}/3/movie/:movie_id/release_dates
+
+###
+# group: 3 / movie / {movie_id}
+# @name Reviews
+# Get the user reviews for a movie.
+GET {{baseUrl}}/3/movie/{{movie_id_14}}/reviews?
+    language=en-US&
+    page=1
+Authorization: {{apiKey}}
+Accept: application/json
+
+<> ./200.200.json
+// {{baseUrl}}/3/movie/:movie_id/reviews?language=en-US&page=1
+
+###
+# group: 3 / movie / {movie_id}
+# @name Similar
+# Get the similar movies based on genres and keywords.
+GET {{baseUrl}}/3/movie/{{movie_id_15}}/similar?
+    language=en-US&
+    page=1
+Authorization: {{apiKey}}
+Accept: application/json
+
+<> ./200.200.json
+// {{baseUrl}}/3/movie/:movie_id/similar?language=en-US&page=1
+
+###
+# group: 3 / movie / {movie_id}
+# @name Translations
+# Get the translations for a movie.
+GET {{baseUrl}}/3/movie/{{movie_id_16}}/translations
+Authorization: {{apiKey}}
+Accept: application/json
+
+<> ./200.200.json
+// {{baseUrl}}/3/movie/:movie_id/translations
+
+###
+# group: 3 / movie / {movie_id}
+# @name Videos
+GET {{baseUrl}}/3/movie/{{movie_id_17}}/videos?
+    language=en-US
+Authorization: {{apiKey}}
+Accept: application/json
+
+<> ./200.200.json
+// {{baseUrl}}/3/movie/:movie_id/videos?language=en-US
+
+###
+# group: 3 / movie / {movie_id}
+# @name Watch Providers
+# Get the list of streaming providers we have for a movie.
+GET {{baseUrl}}/3/movie/{{movie_id_18}}/watch/providers
+Authorization: {{apiKey}}
+Accept: application/json
+
+<> ./200.200.json
+// {{baseUrl}}/3/movie/:movie_id/watch/providers
+
+###
+# group: 3 / movie
+# @name Popular
+# Get a list of movies ordered by popularity.
+GET {{baseUrl}}/3/movie/popular?
+    language=en-US&
+    page=1&
+    region=<string>
+Authorization: {{apiKey}}
+Accept: application/json
+
+<> ./200.200.json
+// {{baseUrl}}/3/movie/popular?language=en-US&page=1&region=<string>
+
+###
+# group: 3 / movie
+# @name Top Rated
+# Get a list of movies ordered by rating.
+GET {{baseUrl}}/3/movie/top_rated?
+    language=en-US&
+    page=1&
+    region=<string>
+Authorization: {{apiKey}}
+Accept: application/json
+
+<> ./200.200.json
+// {{baseUrl}}/3/movie/top_rated?language=en-US&page=1&region=<string>
+
+###
+# group: 3 / movie
+# @name Upcoming
+# Get a list of movies that are being released soon.
+GET {{baseUrl}}/3/movie/upcoming?
+    language=en-US&
+    page=1&
+    region=<string>
+Authorization: {{apiKey}}
+Accept: application/json
+
+<> ./200.200.json
+// {{baseUrl}}/3/movie/upcoming?language=en-US&page=1&region=<string>
+
+###
+# group: 3 / movie
+# @name Now Playing
+# Get a list of movies that are currently in theatres.
+GET {{baseUrl}}/3/movie/now_playing?
+    language=en-US&
+    page=1&
+    region=<string>
+Authorization: {{apiKey}}
+Accept: application/json
+
+<> ./200.200.json
+// {{baseUrl}}/3/movie/now_playing?language=en-US&page=1&region=<string>
+
+###
+# group: 3 / movie
+# @name Latest
+# Get the newest movie ID.
+GET {{baseUrl}}/3/movie/latest
+Authorization: {{apiKey}}
+Accept: application/json
+
+<> ./200.200.json
+// {{baseUrl}}/3/movie/latest
+
+###
+# group: 3 / movie
+# @name Movie List
+# Get a list of all of the movie ids that have been changed in the past 24 hours.
+GET {{baseUrl}}/3/movie/changes?
+    end_date=<date>&
+    page=1&
+    start_date=<date>
+Authorization: {{apiKey}}
+Accept: application/json
+
+<> ./200.200.json
+// {{baseUrl}}/3/movie/changes?end_date=<date>&page=1&start_date=<date>
+
+###
+# group: 3 / tv / {series_id} / season/{season_number} / episode/{episode_number} / rating
+# @name Add Rating
+# Rate a TV episode and save it to your rated list.
+POST {{baseUrl}}/3/tv/{{series_id_1}}/season/{{season_number_1}}/episode/{{episode_number_1}}/rating?
+    guest_session_id=<string>&
+    session_id=<string>
+Authorization: {{apiKey}}
+Content-Type: application/json
+Accept: application/json
+
+{
+  "RAW_BODY": "<json>"
+}
+
+<> ./200.200.json
+// {{baseUrl}}/3/tv/:series_id/season/:season_number/episode/:episode_number/rating?guest_session_id=<string>&session_id=<string>
+
+###
+# group: 3 / tv / {series_id} / season/{season_number} / episode/{episode_number} / rating
+# @name Delete Rating
+# Delete your rating on a TV episode.
+DELETE {{baseUrl}}/3/tv/{{series_id_2}}/season/{{season_number_2}}/episode/{{episode_number_2}}/rating?
+    guest_session_id=<string>&
+    session_id=<string>
+Authorization: {{apiKey}}
+Accept: application/json
+
+<> ./200.200.json
+// {{baseUrl}}/3/tv/:series_id/season/:season_number/episode/:episode_number/rating?guest_session_id=<string>&session_id=<string>
+
+###
+# group: 3 / tv / {series_id} / season/{season_number} / episode/{episode_number}
+# @name Details
+# Query the details of a TV episode.
+GET {{baseUrl}}/3/tv/{{series_id_3}}/season/{{season_number_3}}/episode/{{episode_number_3}}?
+    append_to_response=<string>&
+    language=en-US
+Authorization: {{apiKey}}
+Accept: application/json
+
+<> ./200.200.json
+// {{baseUrl}}/3/tv/:series_id/season/:season_number/episode/:episode_number?append_to_response=<string>&language=en-US
+
+###
+# group: 3 / tv / {series_id} / season/{season_number} / episode/{episode_number}
+# @name Images
+# Get the images that belong to a TV episode.
+GET {{baseUrl}}/3/tv/{{series_id_4}}/season/{{season_number_4}}/episode/{{episode_number_4}}/images?
+    include_image_language=<string>&
+    language=<string>
+Authorization: {{apiKey}}
+Accept: application/json
+
+<> ./200.200.json
+// {{baseUrl}}/3/tv/:series_id/season/:season_number/episode/:episode_number/images?include_image_language=<string>&language=<string>
+
+###
+# group: 3 / tv / {series_id} / season/{season_number} / episode/{episode_number}
+# @name Account States
+# Get the rating, watchlist and favourite status.
+GET {{baseUrl}}/3/tv/{{series_id_5}}/season/{{season_number_5}}/episode/{{episode_number_5}}/account_states?
+    session_id=<string>&
+    guest_session_id=<string>
+Authorization: {{apiKey}}
+Accept: application/json
+
+<> ./200.200.json
+// {{baseUrl}}/3/tv/:series_id/season/:season_number/episode/:episode_number/account_states?session_id=<string>&guest_session_id=<string>
+
+###
+# group: 3 / tv / {series_id} / season/{season_number} / episode/{episode_number}
+# @name Credits
+GET {{baseUrl}}/3/tv/{{series_id_6}}/season/{{season_number_6}}/episode/{{episode_number_6}}/credits?
+    language=en-US
+Authorization: {{apiKey}}
+Accept: application/json
+
+<> ./200.200.json
+// {{baseUrl}}/3/tv/:series_id/season/:season_number/episode/:episode_number/credits?language=en-US
+
+###
+# group: 3 / tv / {series_id} / season/{season_number} / episode/{episode_number}
+# @name External IDs
+# Get a list of external IDs that have been added to a TV episode.
+GET {{baseUrl}}/3/tv/{{series_id_7}}/season/{{season_number_7}}/episode/{{episode_number_7}}/external_ids
+Authorization: {{apiKey}}
+Accept: application/json
+
+<> ./200.200.json
+// {{baseUrl}}/3/tv/:series_id/season/:season_number/episode/:episode_number/external_ids
+
+###
+# group: 3 / tv / {series_id} / season/{season_number} / episode/{episode_number}
+# @name Translations
+# Get the translations that have been added to a TV episode.
+GET {{baseUrl}}/3/tv/{{series_id_8}}/season/{{season_number_8}}/episode/{{episode_number_8}}/translations
+Authorization: {{apiKey}}
+Accept: application/json
+
+<> ./200.200.json
+// {{baseUrl}}/3/tv/:series_id/season/:season_number/episode/:episode_number/translations
+
+###
+# group: 3 / tv / {series_id} / season/{season_number} / episode/{episode_number}
+# @name Videos
+# Get the videos that belong to a TV episode.
+GET {{baseUrl}}/3/tv/{{series_id_9}}/season/{{season_number_9}}/episode/{{episode_number_9}}/videos?
+    include_video_language=<string>&
+    language=en-US
+Authorization: {{apiKey}}
+Accept: application/json
+
+<> ./200.200.json
+// {{baseUrl}}/3/tv/:series_id/season/:season_number/episode/:episode_number/videos?include_video_language=<string>&language=en-US
+
+###
+# group: 3 / tv / {series_id} / season/{season_number}
+# @name Details
+# Query the details of a TV season.
+GET {{baseUrl}}/3/tv/{{series_id_10}}/season/{{season_number_10}}?
+    append_to_response=<string>&
+    language=en-US
+Authorization: {{apiKey}}
+Accept: application/json
+
+<> ./200.200.json
+// {{baseUrl}}/3/tv/:series_id/season/:season_number?append_to_response=<string>&language=en-US
+
+###
+# group: 3 / tv / {series_id} / season/{season_number}
+# @name Images
+# Get the images that belong to a TV season.
+GET {{baseUrl}}/3/tv/{{series_id_11}}/season/{{season_number_11}}/images?
+    include_image_language=<string>&
+    language=<string>
+Authorization: {{apiKey}}
+Accept: application/json
+
+<> ./200.200.json
+// {{baseUrl}}/3/tv/:series_id/season/:season_number/images?include_image_language=<string>&language=<string>
+
+###
+# group: 3 / tv / {series_id} / season/{season_number}
+# @name Account States
+# Get the rating, watchlist and favourite status.
+GET {{baseUrl}}/3/tv/{{series_id_12}}/season/{{season_number_12}}/account_states?
+    session_id=<string>&
+    guest_session_id=<string>
+Authorization: {{apiKey}}
+Accept: application/json
+
+<> ./200.200.json
+// {{baseUrl}}/3/tv/:series_id/season/:season_number/account_states?session_id=<string>&guest_session_id=<string>
+
+###
+# group: 3 / tv / {series_id} / season/{season_number}
+# @name Aggregate Credits
+# Get the aggregate credits (cast and crew) that have been added to a TV season.
+GET {{baseUrl}}/3/tv/{{series_id_13}}/season/{{season_number_13}}/aggregate_credits?
+    language=en-US
+Authorization: {{apiKey}}
+Accept: application/json
+
+<> ./200.200.json
+// {{baseUrl}}/3/tv/:series_id/season/:season_number/aggregate_credits?language=en-US
+
+###
+# group: 3 / tv / {series_id} / season/{season_number}
+# @name Credits
+GET {{baseUrl}}/3/tv/{{series_id_14}}/season/{{season_number_14}}/credits?
+    language=en-US
+Authorization: {{apiKey}}
+Accept: application/json
+
+<> ./200.200.json
+// {{baseUrl}}/3/tv/:series_id/season/:season_number/credits?language=en-US
+
+###
+# group: 3 / tv / {series_id} / season/{season_number}
+# @name External IDs
+# Get a list of external IDs that have been added to a TV season.
+GET {{baseUrl}}/3/tv/{{series_id_15}}/season/{{season_number_15}}/external_ids
+Authorization: {{apiKey}}
+Accept: application/json
+
+<> ./200.200.json
+// {{baseUrl}}/3/tv/:series_id/season/:season_number/external_ids
+
+###
+# group: 3 / tv / {series_id} / season/{season_number}
+# @name Translations
+# Get the translations for a TV season.
+GET {{baseUrl}}/3/tv/{{series_id_16}}/season/{{season_number_16}}/translations
+Authorization: {{apiKey}}
+Accept: application/json
+
+<> ./200.200.json
+// {{baseUrl}}/3/tv/:series_id/season/:season_number/translations
+
+###
+# group: 3 / tv / {series_id} / season/{season_number}
+# @name Videos
+# Get the videos that belong to a TV season.
+GET {{baseUrl}}/3/tv/{{series_id_17}}/season/{{season_number_17}}/videos?
+    include_video_language=<string>&
+    language=en-US
+Authorization: {{apiKey}}
+Accept: application/json
+
+<> ./200.200.json
+// {{baseUrl}}/3/tv/:series_id/season/:season_number/videos?include_video_language=<string>&language=en-US
+
+###
+# group: 3 / tv / {series_id} / season/{season_number}
+# @name Watch Providers
+# Get the list of streaming providers we have for a TV season.
+GET {{baseUrl}}/3/tv/{{series_id_18}}/season/{{season_number_18}}/watch/providers?
+    language=en-US
+Authorization: {{apiKey}}
+Accept: application/json
+
+<> ./200.200.json
+// {{baseUrl}}/3/tv/:series_id/season/:season_number/watch/providers?language=en-US
+
+###
+# group: 3 / tv / {series_id} / rating
+# @name Add Rating
+# Rate a TV show and save it to your rated list.
+POST {{baseUrl}}/3/tv/{{series_id_19}}/rating?
+    guest_session_id=<string>&
+    session_id=<string>
+Authorization: {{apiKey}}
+Content-Type: application/json
+Accept: application/json
+
+{
+  "RAW_BODY": "<json>"
+}
+
+<> ./200.200.json
+// {{baseUrl}}/3/tv/:series_id/rating?guest_session_id=<string>&session_id=<string>
+
+###
+# group: 3 / tv / {series_id} / rating
+# @name Delete Rating
+DELETE {{baseUrl}}/3/tv/{{series_id_20}}/rating?
+    guest_session_id=<string>&
+    session_id=<string>
+Authorization: {{apiKey}}
+Accept: application/json
+
+<> ./200.200.json
+// {{baseUrl}}/3/tv/:series_id/rating?guest_session_id=<string>&session_id=<string>
+
+###
+# group: 3 / tv / {series_id}
+# @name Details
+# Get the details of a TV show.
+GET {{baseUrl}}/3/tv/{{series_id_21}}?
+    append_to_response=<string>&
+    language=en-US
+Authorization: {{apiKey}}
+Accept: application/json
+
+<> ./200.200.json
+// {{baseUrl}}/3/tv/:series_id?append_to_response=<string>&language=en-US
+
+###
+# group: 3 / tv / {series_id}
+# @name Images
+# Get the images that belong to a TV series.
+GET {{baseUrl}}/3/tv/{{series_id_22}}/images?
+    include_image_language=<string>&
+    language=<string>
+Authorization: {{apiKey}}
+Accept: application/json
+
+<> ./200.200.json
+// {{baseUrl}}/3/tv/:series_id/images?include_image_language=<string>&language=<string>
+
+###
+# group: 3 / tv / {series_id}
+# @name Account States
+# Get the rating, watchlist and favourite status.
+GET {{baseUrl}}/3/tv/{{series_id_23}}/account_states?
+    session_id=<string>&
+    guest_session_id=<string>
+Authorization: {{apiKey}}
+Accept: application/json
+
+<> ./200.200.json
+// {{baseUrl}}/3/tv/:series_id/account_states?session_id=<string>&guest_session_id=<string>
+
+###
+# group: 3 / tv / {series_id}
+# @name Changes
+# Get the recent changes for a TV show.
+GET {{baseUrl}}/3/tv/{{series_id_24}}/changes?
+    end_date=<string>&
+    page=1&
+    start_date=<string>
+Authorization: {{apiKey}}
+Accept: application/json
+
+<> ./200.200.json
+// {{baseUrl}}/3/tv/:series_id/changes?end_date=<string>&page=1&start_date=<string>
+
+###
+# group: 3 / tv / {series_id}
+# @name Aggregate Credits
+# Get the aggregate credits (cast and crew) that have been added to a TV show.
+GET {{baseUrl}}/3/tv/{{series_id_25}}/aggregate_credits?
+    language=en-US
+Authorization: {{apiKey}}
+Accept: application/json
+
+<> ./200.200.json
+// {{baseUrl}}/3/tv/:series_id/aggregate_credits?language=en-US
+
+###
+# group: 3 / tv / {series_id}
+# @name Alternative Titles
+# Get the alternative titles that have been added to a TV show.
+GET {{baseUrl}}/3/tv/{{series_id_26}}/alternative_titles
+Authorization: {{apiKey}}
+Accept: application/json
+
+<> ./200.200.json
+// {{baseUrl}}/3/tv/:series_id/alternative_titles
+
+###
+# group: 3 / tv / {series_id}
+# @name Content Ratings
+# Get the content ratings that have been added to a TV show.
+GET {{baseUrl}}/3/tv/{{series_id_27}}/content_ratings
+Authorization: {{apiKey}}
+Accept: application/json
+
+<> ./200.200.json
+// {{baseUrl}}/3/tv/:series_id/content_ratings
+
+###
+# group: 3 / tv / {series_id}
+# @name Credits
+# Get the latest season credits of a TV show.
+GET {{baseUrl}}/3/tv/{{series_id_28}}/credits?
+    language=en-US
+Authorization: {{apiKey}}
+Accept: application/json
+
+<> ./200.200.json
+// {{baseUrl}}/3/tv/:series_id/credits?language=en-US
+
+###
+# group: 3 / tv / {series_id}
+# @name Episode Groups
+# Get the episode groups that have been added to a TV show.
+GET {{baseUrl}}/3/tv/{{series_id_29}}/episode_groups
+Authorization: {{apiKey}}
+Accept: application/json
+
+<> ./200.200.json
+// {{baseUrl}}/3/tv/:series_id/episode_groups
+
+###
+# group: 3 / tv / {series_id}
+# @name External IDs
+# Get a list of external IDs that have been added to a TV show.
+GET {{baseUrl}}/3/tv/{{series_id_30}}/external_ids
+Authorization: {{apiKey}}
+Accept: application/json
+
+<> ./200.200.json
+// {{baseUrl}}/3/tv/:series_id/external_ids
+
+###
+# group: 3 / tv / {series_id}
+# @name Keywords
+# Get a list of keywords that have been added to a TV show.
+GET {{baseUrl}}/3/tv/{{series_id_31}}/keywords
+Authorization: {{apiKey}}
+Accept: application/json
+
+<> ./200.200.json
+// {{baseUrl}}/3/tv/:series_id/keywords
+
+###
+# group: 3 / tv / {series_id}
+# @name Recommendations
+GET {{baseUrl}}/3/tv/{{series_id_32}}/recommendations?
+    language=en-US&
+    page=1
+Authorization: {{apiKey}}
+Accept: application/json
+
+<> ./200.200.json
+// {{baseUrl}}/3/tv/:series_id/recommendations?language=en-US&page=1
+
+###
+# group: 3 / tv / {series_id}
+# @name Reviews
+# Get the reviews that have been added to a TV show.
+GET {{baseUrl}}/3/tv/{{series_id_33}}/reviews?
+    language=en-US&
+    page=1
+Authorization: {{apiKey}}
+Accept: application/json
+
+<> ./200.200.json
+// {{baseUrl}}/3/tv/:series_id/reviews?language=en-US&page=1
+
+###
+# group: 3 / tv / {series_id}
+# @name Screened Theatrically
+# Get the seasons and episodes that have screened theatrically.
+GET {{baseUrl}}/3/tv/{{series_id_34}}/screened_theatrically
+Authorization: {{apiKey}}
+Accept: application/json
+
+<> ./200.200.json
+// {{baseUrl}}/3/tv/:series_id/screened_theatrically
+
+###
+# group: 3 / tv / {series_id}
+# @name Similar
+# Get the similar TV shows.
+GET {{baseUrl}}/3/tv/{{series_id_35}}/similar?
+    language=en-US&
+    page=1
+Authorization: {{apiKey}}
+Accept: application/json
+
+<> ./200.200.json
+// {{baseUrl}}/3/tv/:series_id/similar?language=en-US&page=1
+
+###
+# group: 3 / tv / {series_id}
+# @name Translations
+# Get the translations that have been added to a TV show.
+GET {{baseUrl}}/3/tv/{{series_id_36}}/translations
+Authorization: {{apiKey}}
+Accept: application/json
+
+<> ./200.200.json
+// {{baseUrl}}/3/tv/:series_id/translations
+
+###
+# group: 3 / tv / {series_id}
+# @name Videos
+# Get the videos that belong to a TV show.
+GET {{baseUrl}}/3/tv/{{series_id_37}}/videos?
+    include_video_language=<string>&
+    language=en-US
+Authorization: {{apiKey}}
+Accept: application/json
+
+<> ./200.200.json
+// {{baseUrl}}/3/tv/:series_id/videos?include_video_language=<string>&language=en-US
+
+###
+# group: 3 / tv / {series_id}
+# @name Watch Providers
+# Get the list of streaming providers we have for a TV show.
+GET {{baseUrl}}/3/tv/{{series_id_38}}/watch/providers
+Authorization: {{apiKey}}
+Accept: application/json
+
+<> ./200.200.json
+// {{baseUrl}}/3/tv/:series_id/watch/providers
+
+###
+# group: 3 / tv / {series_id}
+# @name Lists
+# Get the lists that a TV series has been added to.
+GET {{baseUrl}}/3/tv/{{series_id_39}}/lists?
+    language=en-US&
+    page=1
+Authorization: {{apiKey}}
+Accept: application/json
+
+<> ./200.200.json
+// {{baseUrl}}/3/tv/:series_id/lists?language=en-US&page=1
+
+###
+# group: 3 / tv
+# @name Airing Today
+# Get a list of TV shows airing today.
+GET {{baseUrl}}/3/tv/airing_today?
+    language=en-US&
+    page=1&
+    timezone=<string>
+Authorization: {{apiKey}}
+Accept: application/json
+
+<> ./200.200.json
+// {{baseUrl}}/3/tv/airing_today?language=en-US&page=1&timezone=<string>
+
+###
+# group: 3 / tv
+# @name On The Air
+# Get a list of TV shows that air in the next 7 days.
+GET {{baseUrl}}/3/tv/on_the_air?
+    language=en-US&
+    page=1&
+    timezone=<string>
+Authorization: {{apiKey}}
+Accept: application/json
+
+<> ./200.200.json
+// {{baseUrl}}/3/tv/on_the_air?language=en-US&page=1&timezone=<string>
+
+###
+# group: 3 / tv
+# @name Popular
+# Get a list of TV shows ordered by popularity.
+GET {{baseUrl}}/3/tv/popular?
+    language=en-US&
+    page=1
+Authorization: {{apiKey}}
+Accept: application/json
+
+<> ./200.200.json
+// {{baseUrl}}/3/tv/popular?language=en-US&page=1
+
+###
+# group: 3 / tv
+# @name Top Rated
+# Get a list of TV shows ordered by rating.
+GET {{baseUrl}}/3/tv/top_rated?
+    language=en-US&
+    page=1
+Authorization: {{apiKey}}
+Accept: application/json
+
+<> ./200.200.json
+// {{baseUrl}}/3/tv/top_rated?language=en-US&page=1
+
+###
+# group: 3 / tv
+# @name Latest
+# Get the newest TV show ID.
+GET {{baseUrl}}/3/tv/latest
+Authorization: {{apiKey}}
+Accept: application/json
+
+<> ./200.200.json
+// {{baseUrl}}/3/tv/latest
+
+###
+# group: 3 / tv
+# @name Changes
+# Get the recent changes for a TV season.
+GET {{baseUrl}}/3/tv/season/{{season_id_1}}/changes?
+    end_date=<string>&
+    page=1&
+    start_date=<string>
+Authorization: {{apiKey}}
+Accept: application/json
+
+<> ./200.200.json
+// {{baseUrl}}/3/tv/season/:season_id/changes?end_date=<string>&page=1&start_date=<string>
+
+###
+# group: 3 / tv
+# @name TV List
+GET {{baseUrl}}/3/tv/changes?
+    end_date=<date>&
+    page=1&
+    start_date=<date>
+Authorization: {{apiKey}}
+Accept: application/json
+
+<> ./200.200.json
+// {{baseUrl}}/3/tv/changes?end_date=<date>&page=1&start_date=<date>
+
+###
+# group: 3 / tv
+# @name Changes
+# Get the recent changes for a TV episode.
+GET {{baseUrl}}/3/tv/episode/{{episode_id_1}}/changes
+Authorization: {{apiKey}}
+Accept: application/json
+
+<> ./200.200.json
+// {{baseUrl}}/3/tv/episode/:episode_id/changes
+
+###
+# group: 3 / tv
+# @name Details
+# Get the details of a TV episode group.
+GET {{baseUrl}}/3/tv/episode_group/{{tv_episode_group_id_1}}
+Authorization: {{apiKey}}
+Accept: application/json
+
+<> ./200.200.json
+// {{baseUrl}}/3/tv/episode_group/:tv_episode_group_id
+
+###
+# group: 3 / configuration
+# @name Details
+# Query the API configuration details.
+GET {{baseUrl}}/3/configuration
+Authorization: {{apiKey}}
+Accept: application/json
+
+<> ./200.200.json
+// {{baseUrl}}/3/configuration
+
+###
+# group: 3 / configuration
+# @name Countries
+# Get the list of countries (ISO 3166-1 tags) used throughout TMDB.
+GET {{baseUrl}}/3/configuration/countries?
+    language=en-US
+Authorization: {{apiKey}}
+Accept: application/json
+
+<> ./200.200.json
+// {{baseUrl}}/3/configuration/countries?language=en-US
+
+###
+# group: 3 / configuration
+# @name Jobs
+# Get the list of the jobs and departments we use on TMDB.
+GET {{baseUrl}}/3/configuration/jobs
+Authorization: {{apiKey}}
+Accept: application/json
+
+<> ./200.200.json
+// {{baseUrl}}/3/configuration/jobs
+
+###
+# group: 3 / configuration
+# @name Languages
+# Get the list of languages (ISO 639-1 tags) used throughout TMDB.
+GET {{baseUrl}}/3/configuration/languages
+Authorization: {{apiKey}}
+Accept: application/json
+
+<> ./200.200.json
+// {{baseUrl}}/3/configuration/languages
+
+###
+# group: 3 / configuration
+# @name Primary Translations
+# Get a list of the officially supported translations on TMDB.
+GET {{baseUrl}}/3/configuration/primary_translations
+Authorization: {{apiKey}}
+Accept: application/json
+
+<> ./200.200.json
+// {{baseUrl}}/3/configuration/primary_translations
+
+###
+# group: 3 / configuration
+# @name Timezones
+# Get the list of timezones used throughout TMDB.
+GET {{baseUrl}}/3/configuration/timezones
+Authorization: {{apiKey}}
+Accept: application/json
+
+<> ./200.200.json
+// {{baseUrl}}/3/configuration/timezones
+
+###
+# group: 3 / trending
+# @name All
+# Get the trending movies, TV shows and people.
+GET {{baseUrl}}/3/trending/all/{{time_window_1}}?
+    language=en-US
+Authorization: {{apiKey}}
+Accept: application/json
+
+<> ./200.200.json
+// {{baseUrl}}/3/trending/all/:time_window?language=en-US
+
+###
+# group: 3 / trending
+# @name Movies
+# Get the trending movies on TMDB.
+GET {{baseUrl}}/3/trending/movie/{{time_window_2}}?
+    language=en-US
+Authorization: {{apiKey}}
+Accept: application/json
+
+<> ./200.200.json
+// {{baseUrl}}/3/trending/movie/:time_window?language=en-US
+
+###
+# group: 3 / trending
+# @name TV
+# Get the trending TV shows on TMDB.
+GET {{baseUrl}}/3/trending/tv/{{time_window_3}}?
+    language=en-US
+Authorization: {{apiKey}}
+Accept: application/json
+
+<> ./200.200.json
+// {{baseUrl}}/3/trending/tv/:time_window?language=en-US
+
+###
+# group: 3 / trending
+# @name People
+# Get the trending people on TMDB.
+GET {{baseUrl}}/3/trending/person/{{time_window_4}}?
+    language=en-US
+Authorization: {{apiKey}}
+Accept: application/json
+
+<> ./200.200.json
+// {{baseUrl}}/3/trending/person/:time_window?language=en-US
+
+###
+# group: 3 / authentication / token
+# @name Create Request Token
+GET {{baseUrl}}/3/authentication/token/new
+Authorization: {{apiKey}}
+Accept: application/json
+
+<> ./200.200.json
+// {{baseUrl}}/3/authentication/token/new
+
+###
+# group: 3 / authentication / token
+# @name Create Session (with login)
+# This method allows an application to validate a request token by entering a username and password.
+POST {{baseUrl}}/3/authentication/token/validate_with_login
+Authorization: {{apiKey}}
+Content-Type: application/json
+Accept: application/json
+
+{
+  "RAW_BODY": "<json>"
+}
+
+<> ./200.200.json
+// {{baseUrl}}/3/authentication/token/validate_with_login
+
+###
+# group: 3 / authentication / session
+# @name Delete Session
+DELETE {{baseUrl}}/3/authentication/session
+Authorization: {{apiKey}}
+Content-Type: application/json
+Accept: application/json
+
+{
+  "RAW_BODY": "<json>"
+}
+
+<> ./200.200.json
+// {{baseUrl}}/3/authentication/session
+
+###
+# group: 3 / authentication / session
+# @name Create Session
+POST {{baseUrl}}/3/authentication/session/new
+Authorization: {{apiKey}}
+Content-Type: application/json
+Accept: application/json
+
+{
+  "RAW_BODY": "<json>"
+}
+
+<> ./200.200.json
+// {{baseUrl}}/3/authentication/session/new
+
+###
+# group: 3 / authentication / session
+# @name Create Session (from v4 token)
+POST {{baseUrl}}/3/authentication/session/convert/4
+Authorization: {{apiKey}}
+Content-Type: application/json
+Accept: application/json
+
+{
+  "RAW_BODY": "<json>"
+}
+
+<> ./200.200.json
+// {{baseUrl}}/3/authentication/session/convert/4
+
+###
+# group: 3 / authentication
+# @name Validate Key
+# Test your API Key to see if it's valid.
+GET {{baseUrl}}/3/authentication
+Authorization: {{apiKey}}
+Accept: application/json
+
+<> ./200.200.json
+// {{baseUrl}}/3/authentication
+<> ./401.401.json
+// {{baseUrl}}/3/authentication
+
+###
+# group: 3 / authentication
+# @name Create Guest Session
+GET {{baseUrl}}/3/authentication/guest_session/new
+Authorization: {{apiKey}}
+Accept: application/json
+
+<> ./200.200.json
+// {{baseUrl}}/3/authentication/guest_session/new
+
+###
+# group: 3 / person / {person_id}
+# @name Details
+# Query the top level details of a person.
+GET {{baseUrl}}/3/person/{{person_id_1}}?
+    append_to_response=<string>&
+    language=en-US
+Authorization: {{apiKey}}
+Accept: application/json
+
+<> ./200.200.json
+// {{baseUrl}}/3/person/:person_id?append_to_response=<string>&language=en-US
+
+###
+# group: 3 / person / {person_id}
+# @name Changes
+# Get the recent changes for a person.
+GET {{baseUrl}}/3/person/{{person_id_2}}/changes?
+    end_date=<date>&
+    page=1&
+    start_date=<date>
+Authorization: {{apiKey}}
+Accept: application/json
+
+<> ./200.200.json
+// {{baseUrl}}/3/person/:person_id/changes?end_date=<date>&page=1&start_date=<date>
+
+###
+# group: 3 / person / {person_id}
+# @name Images
+# Get the profile images that belong to a person.
+GET {{baseUrl}}/3/person/{{person_id_3}}/images
+Authorization: {{apiKey}}
+Accept: application/json
+
+<> ./200.200.json
+// {{baseUrl}}/3/person/:person_id/images
+
+###
+# group: 3 / person / {person_id}
+# @name Movie Credits
+# Get the movie credits for a person.
+GET {{baseUrl}}/3/person/{{person_id_4}}/movie_credits?
+    language=en-US
+Authorization: {{apiKey}}
+Accept: application/json
+
+<> ./200.200.json
+// {{baseUrl}}/3/person/:person_id/movie_credits?language=en-US
+
+###
+# group: 3 / person / {person_id}
+# @name TV Credits
+# Get the TV credits that belong to a person.
+GET {{baseUrl}}/3/person/{{person_id_5}}/tv_credits?
+    language=en-US
+Authorization: {{apiKey}}
+Accept: application/json
+
+<> ./200.200.json
+// {{baseUrl}}/3/person/:person_id/tv_credits?language=en-US
+
+###
+# group: 3 / person / {person_id}
+# @name Combined Credits
+# Get the combined movie and TV credits that belong to a person.
+GET {{baseUrl}}/3/person/{{person_id_6}}/combined_credits?
+    language=en-US
+Authorization: {{apiKey}}
+Accept: application/json
+
+<> ./200.200.json
+// {{baseUrl}}/3/person/:person_id/combined_credits?language=en-US
+
+###
+# group: 3 / person / {person_id}
+# @name External IDs
+# Get the external ID's that belong to a person.
+GET {{baseUrl}}/3/person/{{person_id_7}}/external_ids
+Authorization: {{apiKey}}
+Accept: application/json
+
+<> ./200.200.json
+// {{baseUrl}}/3/person/:person_id/external_ids
+
+###
+# group: 3 / person / {person_id}
+# @name Tagged Images
+# Get the tagged images for a person.
+GET {{baseUrl}}/3/person/{{person_id_8}}/tagged_images?
+    page=1
+Authorization: {{apiKey}}
+Accept: application/json
+
+<> ./200.200.json
+// {{baseUrl}}/3/person/:person_id/tagged_images?page=1
+
+###
+# group: 3 / person / {person_id}
+# @name Translations
+# Get the translations that belong to a person.
+GET {{baseUrl}}/3/person/{{person_id_9}}/translations
+Authorization: {{apiKey}}
+Accept: application/json
+
+<> ./200.200.json
+// {{baseUrl}}/3/person/:person_id/translations
+
+###
+# group: 3 / person
+# @name Popular
+# Get a list of people ordered by popularity.
+GET {{baseUrl}}/3/person/popular?
+    language=en-US&
+    page=1
+Authorization: {{apiKey}}
+Accept: application/json
+
+<> ./200.200.json
+// {{baseUrl}}/3/person/popular?language=en-US&page=1
+
+###
+# group: 3 / person
+# @name People List
+GET {{baseUrl}}/3/person/changes?
+    end_date=<date>&
+    page=1&
+    start_date=<date>
+Authorization: {{apiKey}}
+Accept: application/json
+
+<> ./200.200.json
+// {{baseUrl}}/3/person/changes?end_date=<date>&page=1&start_date=<date>
+
+###
+# group: 3 / person
+# @name Latest
+# Get the newest created person. This is a live response and will continuously change.
+GET {{baseUrl}}/3/person/latest
+Authorization: {{apiKey}}
+Accept: application/json
+
+<> ./200.200.json
+// {{baseUrl}}/3/person/latest
+
+###
+# group: 3 / account/{account_id} / favorite
+# @name Add Favorite
+POST {{baseUrl}}/3/account/{{account_id_1}}/favorite?
+    session_id=<string>
+Authorization: {{apiKey}}
+Content-Type: application/json
+Accept: application/json
+
+{
+  "RAW_BODY": "<json>"
+}
+
+<> ./200.200.json
+// {{baseUrl}}/3/account/:account_id/favorite?session_id=<string>
+
+###
+# group: 3 / account/{account_id} / favorite
+# @name Favorite Movies
+GET {{baseUrl}}/3/account/{{account_id_2}}/favorite/movies?
+    language=en-US&
+    page=1&
+    session_id=<string>&
+    sort_by=created_at.asc
+Authorization: {{apiKey}}
+Accept: application/json
+
+<> ./200.200.json
+// {{baseUrl}}/3/account/:account_id/favorite/movies?language=en-US&page=1&session_id=<string>&sort_by=created_at.asc
+
+###
+# group: 3 / account/{account_id} / favorite
+# @name Favorite TV
+GET {{baseUrl}}/3/account/{{account_id_3}}/favorite/tv?
+    language=en-US&
+    page=1&
+    session_id=<string>&
+    sort_by=created_at.asc
+Authorization: {{apiKey}}
+Accept: application/json
+
+<> ./200.200.json
+// {{baseUrl}}/3/account/:account_id/favorite/tv?language=en-US&page=1&session_id=<string>&sort_by=created_at.asc
+
+###
+# group: 3 / account/{account_id} / rated / tv
+# @name Rated TV
+GET {{baseUrl}}/3/account/{{account_id_4}}/rated/tv?
+    language=en-US&
+    page=1&
+    session_id=<string>&
+    sort_by=created_at.asc
+Authorization: {{apiKey}}
+Accept: application/json
+
+<> ./200.200.json
+// {{baseUrl}}/3/account/:account_id/rated/tv?language=en-US&page=1&session_id=<string>&sort_by=created_at.asc
+
+###
+# group: 3 / account/{account_id} / rated / tv
+# @name Rated TV Episodes
+GET {{baseUrl}}/3/account/{{account_id_5}}/rated/tv/episodes?
+    language=en-US&
+    page=1&
+    session_id=<string>&
+    sort_by=created_at.asc
+Authorization: {{apiKey}}
+Accept: application/json
+
+<> ./200.200.json
+// {{baseUrl}}/3/account/:account_id/rated/tv/episodes?language=en-US&page=1&session_id=<string>&sort_by=created_at.asc
+
+###
+# group: 3 / account/{account_id} / rated
+# @name Rated Movies
+GET {{baseUrl}}/3/account/{{account_id_6}}/rated/movies?
+    language=en-US&
+    page=1&
+    session_id=<string>&
+    sort_by=created_at.asc
+Authorization: {{apiKey}}
+Accept: application/json
+
+<> ./200.200.json
+// {{baseUrl}}/3/account/:account_id/rated/movies?language=en-US&page=1&session_id=<string>&sort_by=created_at.asc
+
+###
+# group: 3 / account/{account_id} / watchlist
+# @name Add To Watchlist
+POST {{baseUrl}}/3/account/{{account_id_7}}/watchlist?
+    session_id=<string>
+Authorization: {{apiKey}}
+Content-Type: application/json
+Accept: application/json
+
+{
+  "RAW_BODY": "<json>"
+}
+
+<> ./200.200.json
+// {{baseUrl}}/3/account/:account_id/watchlist?session_id=<string>
+
+###
+# group: 3 / account/{account_id} / watchlist
+# @name Watchlist Movies
+GET {{baseUrl}}/3/account/{{account_id_8}}/watchlist/movies?
+    language=en-US&
+    page=1&
+    session_id=<string>&
+    sort_by=created_at.asc
+Authorization: {{apiKey}}
+Accept: application/json
+
+<> ./200.200.json
+// {{baseUrl}}/3/account/:account_id/watchlist/movies?language=en-US&page=1&session_id=<string>&sort_by=created_at.asc
+
+###
+# group: 3 / account/{account_id} / watchlist
+# @name Watchlist TV
+GET {{baseUrl}}/3/account/{{account_id_9}}/watchlist/tv?
+    language=en-US&
+    page=1&
+    session_id=<string>&
+    sort_by=created_at.asc
+Authorization: {{apiKey}}
+Accept: application/json
+
+<> ./200.200.json
+// {{baseUrl}}/3/account/:account_id/watchlist/tv?language=en-US&page=1&session_id=<string>&sort_by=created_at.asc
+
+###
+# group: 3 / account/{account_id}
+# @name Details
+GET {{baseUrl}}/3/account/{{account_id_10}}?
+    session_id=<string>
+Authorization: {{apiKey}}
+Accept: application/json
+
+<> ./200.200.json
+// {{baseUrl}}/3/account/:account_id?session_id=<string>
+
+###
+# group: 3 / account/{account_id}
+# @name Lists
+GET {{baseUrl}}/3/account/{{account_id_11}}/lists?
+    page=1&
+    session_id=<string>
+Authorization: {{apiKey}}
+Accept: application/json
+
+<> ./200.200.json
+// {{baseUrl}}/3/account/:account_id/lists?page=1&session_id=<string>
+
+###
+# group: 3 / certification
+# @name Movie Certifications
+# Get an up to date list of the officially supported movie certifications on TMDB.
+GET {{baseUrl}}/3/certification/movie/list
+Authorization: {{apiKey}}
+Accept: application/json
+
+<> ./200.200.json
+// {{baseUrl}}/3/certification/movie/list
+
+###
+# group: 3 / certification
+# @name TV Certifications
+GET {{baseUrl}}/3/certification/tv/list
+Authorization: {{apiKey}}
+Accept: application/json
+
+<> ./200.200.json
+// {{baseUrl}}/3/certification/tv/list
+
+###
+# group: 3 / collection/{collection_id}
+# @name Details
+# Get collection details by ID.
+GET {{baseUrl}}/3/collection/{{collection_id_1}}?
+    language=en-US
+Authorization: {{apiKey}}
+Accept: application/json
+
+<> ./200.200.json
+// {{baseUrl}}/3/collection/:collection_id?language=en-US
+
+###
+# group: 3 / collection/{collection_id}
+# @name Images
+# Get the images that belong to a collection.
+GET {{baseUrl}}/3/collection/{{collection_id_2}}/images?
+    include_image_language=<string>&
+    language=<string>
+Authorization: {{apiKey}}
+Accept: application/json
+
+<> ./200.200.json
+// {{baseUrl}}/3/collection/:collection_id/images?include_image_language=<string>&language=<string>
+
+###
+# group: 3 / collection/{collection_id}
+# @name Translations
+GET {{baseUrl}}/3/collection/{{collection_id_3}}/translations
+Authorization: {{apiKey}}
+Accept: application/json
+
+<> ./200.200.json
+// {{baseUrl}}/3/collection/:collection_id/translations
+
+###
+# group: 3 / company/{company_id}
+# @name Details
+# Get the company details by ID.
+GET {{baseUrl}}/3/company/{{company_id_1}}
+Authorization: {{apiKey}}
+Accept: application/json
+
+<> ./200.200.json
+// {{baseUrl}}/3/company/:company_id
+
+###
+# group: 3 / company/{company_id}
+# @name Alternative Names
+# Get the company details by ID.
+GET {{baseUrl}}/3/company/{{company_id_2}}/alternative_names
+Authorization: {{apiKey}}
+Accept: application/json
+
+<> ./200.200.json
+// {{baseUrl}}/3/company/:company_id/alternative_names
+
+###
+# group: 3 / company/{company_id}
+# @name Images
+# Get the company logos by id.
+GET {{baseUrl}}/3/company/{{company_id_3}}/images
+Authorization: {{apiKey}}
+Accept: application/json
+
+<> ./200.200.json
+// {{baseUrl}}/3/company/:company_id/images
+
+###
+# group: 3 / genre
+# @name Movie List
+# Get the list of official genres for movies.
+GET {{baseUrl}}/3/genre/movie/list?
+    language=en
+Authorization: {{apiKey}}
+Accept: application/json
+
+<> ./200.200.json
+// {{baseUrl}}/3/genre/movie/list?language=en
+
+###
+# group: 3 / genre
+# @name TV List
+# Get the list of official genres for TV shows.
+GET {{baseUrl}}/3/genre/tv/list?
+    language=en
+Authorization: {{apiKey}}
+Accept: application/json
+
+<> ./200.200.json
+// {{baseUrl}}/3/genre/tv/list?language=en
+
+###
+# group: 3 / guest_session/{guest_session_id}/rated / tv
+# @name Rated TV
+# Get the rated TV shows for a guest session.
+GET {{baseUrl}}/3/guest_session/{{guest_session_id_1}}/rated/tv?
+    language=en-US&
+    page=1&
+    sort_by=created_at.asc
+Authorization: {{apiKey}}
+Accept: application/json
+
+<> ./200.200.json
+// {{baseUrl}}/3/guest_session/:guest_session_id/rated/tv?language=en-US&page=1&sort_by=created_at.asc
+
+###
+# group: 3 / guest_session/{guest_session_id}/rated / tv
+# @name Rated TV Episodes
+# Get the rated TV episodes for a guest session.
+GET {{baseUrl}}/3/guest_session/{{guest_session_id_2}}/rated/tv/episodes?
+    language=en-US&
+    page=1&
+    sort_by=created_at.asc
+Authorization: {{apiKey}}
+Accept: application/json
+
+<> ./200.200.json
+// {{baseUrl}}/3/guest_session/:guest_session_id/rated/tv/episodes?language=en-US&page=1&sort_by=created_at.asc
+
+###
+# group: 3 / guest_session/{guest_session_id}/rated
+# @name Rated Movies
+# Get the rated movies for a guest session.
+GET {{baseUrl}}/3/guest_session/{{guest_session_id_3}}/rated/movies?
+    language=en-US&
+    page=1&
+    sort_by=created_at.asc
+Authorization: {{apiKey}}
+Accept: application/json
+
+<> ./200.200.json
+// {{baseUrl}}/3/guest_session/:guest_session_id/rated/movies?language=en-US&page=1&sort_by=created_at.asc
+
+###
+# group: 3 / watch/providers
+# @name Available Regions
+# Get the list of the countries we have watch provider (OTT/streaming) data for.
+GET {{baseUrl}}/3/watch/providers/regions?
+    language=en-US
+Authorization: {{apiKey}}
+Accept: application/json
+
+<> ./200.200.json
+// {{baseUrl}}/3/watch/providers/regions?language=en-US
+
+###
+# group: 3 / watch/providers
+# @name Movie Providers
+# Get the list of streaming providers we have for movies.
+GET {{baseUrl}}/3/watch/providers/movie?
+    language=en-US&
+    watch_region=<string>
+Authorization: {{apiKey}}
+Accept: application/json
+
+<> ./200.200.json
+// {{baseUrl}}/3/watch/providers/movie?language=en-US&watch_region=<string>
+
+###
+# group: 3 / watch/providers
+# @name TV Providers
+# Get the list of streaming providers we have for TV shows.
+GET {{baseUrl}}/3/watch/providers/tv?
+    language=en-US&
+    watch_region=<string>
+Authorization: {{apiKey}}
+Accept: application/json
+
+<> ./200.200.json
+// {{baseUrl}}/3/watch/providers/tv?language=en-US&watch_region=<string>
+
+###
+# group: 3 / keyword/{keyword_id}
+# @name Details
+GET {{baseUrl}}/3/keyword/{{keyword_id_1}}
+Authorization: {{apiKey}}
+Accept: application/json
+
+<> ./200.200.json
+// {{baseUrl}}/3/keyword/:keyword_id
+
+###
+# group: 3 / keyword/{keyword_id}
+# @name Movies
+GET {{baseUrl}}/3/keyword/{{keyword_id_2}}/movies?
+    include_adult=false&
+    language=en-US&
+    page=1
+Authorization: {{apiKey}}
+Accept: application/json
+
+<> ./200.200.json
+// {{baseUrl}}/3/keyword/:keyword_id/movies?include_adult=false&language=en-US&page=1
+
+###
+# group: 3 / list / {list_id}
+# @name Details
+GET {{baseUrl}}/3/list/{{list_id_1}}?
+    language=en-US&
+    page=1
+Authorization: {{apiKey}}
+Accept: application/json
+
+<> ./200.200.json
+// {{baseUrl}}/3/list/:list_id?language=en-US&page=1
+
+###
+# group: 3 / list / {list_id}
+# @name Delete
+# Delete a list.
+DELETE {{baseUrl}}/3/list/{{list_id_2}}?
+    session_id=<string>
+Authorization: {{apiKey}}
+Accept: application/json
+
+<> ./200.200.json
+// {{baseUrl}}/3/list/:list_id?session_id=<string>
+
+###
+# group: 3 / list / {list_id}
+# @name Check Item Status
+# Use this method to check if an item has already been added to the list.
+GET {{baseUrl}}/3/list/{{list_id_3}}/item_status?
+    language=en-US&
+    movie_id=<integer>
+Authorization: {{apiKey}}
+Accept: application/json
+
+<> ./200.200.json
+// {{baseUrl}}/3/list/:list_id/item_status?language=en-US&movie_id=<integer>
+
+###
+# group: 3 / list / {list_id}
+# @name Add Movie
+# Add a movie to a list.
+POST {{baseUrl}}/3/list/{{list_id_4}}/add_item?
+    session_id=<string>
+Authorization: {{apiKey}}
+Content-Type: application/json
+Accept: application/json
+
+{
+  "RAW_BODY": "<json>"
+}
+
+<> ./200.200.json
+// {{baseUrl}}/3/list/:list_id/add_item?session_id=<string>
+
+###
+# group: 3 / list / {list_id}
+# @name Remove Movie
+# Remove a movie from a list.
+POST {{baseUrl}}/3/list/{{list_id_5}}/remove_item?
+    session_id=<string>
+Authorization: {{apiKey}}
+Content-Type: application/json
+Accept: application/json
+
+{
+  "RAW_BODY": "<json>"
+}
+
+<> ./200.200.json
+// {{baseUrl}}/3/list/:list_id/remove_item?session_id=<string>
+
+###
+# group: 3 / list / {list_id}
+# @name Clear
+# Clear all items from a list.
+POST {{baseUrl}}/3/list/{{list_id_6}}/clear?
+    session_id=<string>&
+    confirm=false
+Authorization: {{apiKey}}
+Accept: application/json
+
+<> ./200.200.json
+// {{baseUrl}}/3/list/:list_id/clear?session_id=<string>&confirm=false
+
+###
+# group: 3 / list
+# @name Create
+POST {{baseUrl}}/3/list?
+    session_id=<string>
+Authorization: {{apiKey}}
+Content-Type: application/json
+Accept: application/json
+
+{
+  "RAW_BODY": "<json>"
+}
+
+<> ./200.200.json
+// {{baseUrl}}/3/list?session_id=<string>
+
+###
+# group: 3 / network/{network_id}
+# @name Details
+GET {{baseUrl}}/3/network/{{network_id_1}}
+Authorization: {{apiKey}}
+Accept: application/json
+
+<> ./200.200.json
+// {{baseUrl}}/3/network/:network_id
+
+###
+# group: 3 / network/{network_id}
+# @name Alternative Names
+# Get the alternative names of a network.
+GET {{baseUrl}}/3/network/{{network_id_2}}/alternative_names
+Authorization: {{apiKey}}
+Accept: application/json
+
+<> ./200.200.json
+// {{baseUrl}}/3/network/:network_id/alternative_names
+
+###
+# group: 3 / network/{network_id}
+# @name Images
+# Get the TV network logos by id.
+GET {{baseUrl}}/3/network/{{network_id_3}}/images
+Authorization: {{apiKey}}
+Accept: application/json
+
+<> ./200.200.json
+// {{baseUrl}}/3/network/:network_id/images
+
+###
+# group: 3
+# @name Find By ID
+# Find data by external ID's.
+GET {{baseUrl}}/3/find/{{external_id_1}}?
+    external_source=<string>&
+    language=<string>
+Authorization: {{apiKey}}
+Accept: application/json
+
+<> ./200.200.json
+// {{baseUrl}}/3/find/:external_id?external_source=<string>&language=<string>
+
+###
+# group: 3
+# @name Details
+# Get a movie or TV credit details by ID.
+GET {{baseUrl}}/3/credit/{{credit_id_1}}
+Authorization: {{apiKey}}
+Accept: application/json
+
+<> ./200.200.json
+// {{baseUrl}}/3/credit/:credit_id
+
+###
+# group: 3
+# @name Details
+# Retrieve the details of a movie or TV show review.
+GET {{baseUrl}}/3/review/{{review_id_1}}
+Authorization: {{apiKey}}
+Accept: application/json
+
+<> ./200.200.json
+// {{baseUrl}}/3/review/:review_id
