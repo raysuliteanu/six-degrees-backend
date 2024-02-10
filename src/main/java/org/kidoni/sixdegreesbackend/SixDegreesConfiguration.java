@@ -1,5 +1,6 @@
 package org.kidoni.sixdegreesbackend;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.kidoni.sixdegreesbackend.tmdb.TmdbClient;
 import org.kidoni.sixdegreesbackend.tmdb.TmdbConfigurationProperties;
 import org.springframework.context.annotation.Bean;
@@ -9,7 +10,7 @@ import org.springframework.http.client.JdkClientHttpRequestFactory;
 import org.springframework.web.client.RestClient;
 
 @Configuration
-public class SixDegressConfiguration {
+public class SixDegreesConfiguration {
     @Bean
     public RestClient restClient(TmdbConfigurationProperties tmdbConfigurationProperties) {
         return RestClient.builder()
@@ -23,4 +24,10 @@ public class SixDegressConfiguration {
     public TmdbClient tmdbClient(RestClient restClient) {
         return new TmdbClient(restClient);
     }
+
+    @Bean
+    public ObjectMapper objectMapper() {
+        return new ObjectMapper();
+    }
 }
+

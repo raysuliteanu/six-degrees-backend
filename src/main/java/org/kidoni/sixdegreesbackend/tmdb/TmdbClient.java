@@ -8,7 +8,7 @@ import org.springframework.web.client.RestClient;
 
 @Slf4j
 public class TmdbClient {
-    public static final String SEARCH_PERSON_PATH = "search/person/";
+    public static final String SEARCH_PERSON_PATH = "/search/person";
     private final RestClient restClient;
 
     public TmdbClient(RestClient restClient) {
@@ -23,6 +23,7 @@ public class TmdbClient {
                         .queryParam("query", name)
                         .build()))
                 .accept(MediaType.APPLICATION_JSON)
+                .httpRequest(clientHttpRequest -> log.debug(clientHttpRequest.getURI().toASCIIString()))
                 .retrieve()
                 .body(PersonSearchResult.class);
     }
