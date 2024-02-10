@@ -14,7 +14,7 @@ spring:
 tmdb:
   api:
     url: "https://api.themoviedb.org/3/"
-    token: "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJiYTY2NWViYWQzNmVhMTM0YjRhMDUwZjRlODIwNTVhZCIsInN1YiI6IjY1YzNkNmM5ZTI2N2RlMDE3ZGJjYzhlZiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.8oQT5ch22S3QjopS11rPWK0MA0FSA7lWsX98QwVCpS0"
+    token: ${API_TOKEN}
 
 logging:
   level:
