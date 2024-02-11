@@ -2,7 +2,6 @@ package org.kidoni.sixdegreesbackend.tmdb;
 
 import lombok.extern.slf4j.Slf4j;
 import org.kidoni.sixdegreesbackend.PersonSearchResult;
-import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.MediaType;
 import org.springframework.web.client.RestClient;
@@ -24,12 +23,6 @@ public class TmdbClient {
                         .queryParam("query", name)
                         .build()))
                 .accept(MediaType.APPLICATION_JSON)
-                .httpRequest(clientHttpRequest -> {
-                    log.debug("URI: {} Authorization: {}",
-                            clientHttpRequest.getURI().toASCIIString(),
-                            clientHttpRequest.getHeaders().get(HttpHeaders.AUTHORIZATION));
-
-                })
                 .retrieve()
                 .body(PersonSearchResult.class);
     }
