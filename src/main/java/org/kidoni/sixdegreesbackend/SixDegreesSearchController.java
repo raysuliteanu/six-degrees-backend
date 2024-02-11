@@ -22,7 +22,7 @@ public class SixDegreesSearchController {
     @GetMapping(path = "/person/{name}", produces = APPLICATION_JSON_VALUE)
     public PersonSearchResult personSearch(@PathVariable String name) {
         final PersonSearchResult searchResult = client.searchByName(name);
-        log.debug("found: {}", searchResult);
+        log.trace("found: {}", searchResult);
         return searchResult;
     }
 }
