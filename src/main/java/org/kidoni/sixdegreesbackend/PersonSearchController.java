@@ -11,15 +11,15 @@ import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 
 @Slf4j
 @RestController
-@RequestMapping("/search")
-public class SixDegreesSearchController {
+@RequestMapping("/search/person")
+public class PersonSearchController {
     private final TmdbClient client;
 
-    public SixDegreesSearchController(TmdbClient client) {
+    public PersonSearchController(TmdbClient client) {
         this.client = client;
     }
 
-    @GetMapping(path = "/person/{name}", produces = APPLICATION_JSON_VALUE)
+    @GetMapping(path = "/{name}", produces = APPLICATION_JSON_VALUE)
     public PersonSearchResult personSearch(@PathVariable String name) {
         final PersonSearchResult searchResult = client.searchByName(name);
         log.trace("found: {}", searchResult);
