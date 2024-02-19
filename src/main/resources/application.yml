@@ -3,13 +3,20 @@ spring:
     name: six-degress-service
   docker:
     compose:
-      enabled: false
-
-
+      lifecycle-management: start_only
   threads:
     virtual:
       enabled: true
+  neo4j:
+    uri: bolt://localhost:7687
+    authentication:
+      username: neo4j
 
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
 
 tmdb:
   api:
