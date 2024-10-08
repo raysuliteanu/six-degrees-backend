@@ -5,7 +5,7 @@ build/
 !**/src/main/**/build/
 !**/src/test/**/build/
 
-### IntelliJ IDEA ###
+# IntelliJ IDEA
 .idea
 *.iws
 *.iml
@@ -16,5 +16,16 @@ out/
 
 .fleet/
 
-### VS Code ###
+# VS Code
 .vscode/
+
+# eclipse/sts/jdtls
+.settings/
+.classpath
+.project
+
+.factorypath
+
+# dgs generated
+/bin
+

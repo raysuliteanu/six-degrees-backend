@@ -6,10 +6,10 @@ import org.springframework.boot.context.properties.EnableConfigurationProperties
 
 @EnableConfigurationProperties
 @SpringBootApplication
-public class SixDegressApplication {
+public class SixDegreesApplication {
 
-    public static void main(String[] args) {
-        SpringApplication.run(SixDegressApplication.class, args);
-    }
+  public static void main(String[] args) {
+    SpringApplication.run(SixDegreesApplication.class, args);
+  }
 
 }

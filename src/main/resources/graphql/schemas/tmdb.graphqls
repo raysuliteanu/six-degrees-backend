@@ -1,0 +1,37 @@
+type Query {
+    PersonSearch(query: String): [Person]
+}
+
+type Credit {
+    id: Int!
+    title: String
+    overview: String
+    mediaType: String
+    releaseDate: String
+    popularity: Float
+    adult: Boolean
+    genreIds: [Int]
+    video: Boolean
+    originalLanguage: String
+    originalTitle: String
+    posterPath: String
+    backdropPath: String
+}
+
+type Person {
+    id: Int!
+    name: String!
+    popularity: Float
+    knownFor: [Credit]
+    adult: Boolean
+    alsoKnownAs: [String]
+    biography: String
+    birthday: String
+    deathday: String
+    genderCode: Int
+    homepage: String
+    imdbId: String
+    knownForType: String
+    placeOfBirth: String
+    profilePath: String
+}
